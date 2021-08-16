@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css ">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css " />
     <title>Css - Clock</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="clock">
-        <div class="clock-face">
-            <div class="hand hour-hand"></div>
-            <div class="hand min-hand"></div>
-            <div class="hand second-hand"></div>
-            <div class="axle"></div>
-        </div>
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+        <div class="axle"></div>
+      </div>
     </div>
-</body>
-<script>
-    const secondHand = document.querySelector('.second-hand')
-    const minuteHand = document.querySelector('.min-hand')
-    const hourHand = document.querySelector('.hour-hand')
+  </body>
+  <script>
+    const secondHand = document.querySelector(".second-hand");
+    const minuteHand = document.querySelector(".min-hand");
+    const hourHand = document.querySelector(".hour-hand");
 
     function setDate() {
-        const now = new Date();
+      const now = new Date();
 
-        const seconds = now.getSeconds();
-        const secondsDegrees = ((seconds / 60) * 360) + 90;
-        secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+      const seconds = now.getSeconds();
+      const secondsDegrees = (seconds / 60) * 360 + 90;
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
-        const minutes = now.getMinutes();
-        const minutesDegrees = (((minutes + (seconds / 60)) / 60) * 360) + 90;
-        minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+      const minutes = now.getMinutes();
+      const minutesDegrees = ((minutes + seconds / 60) / 60) * 360 + 90;
+      minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
-        const hour = now.getHours();
-        const hourDegrees = (((hour + (minutes / 60)) / 12) * 360) + 90;
-        hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+      const hour = now.getHours();
+      const hourDegrees = ((hour + minutes / 60) / 12) * 360 + 90;
+      hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
-        console.log(hour + ":" + minutes + ":" + seconds);
+      console.log(hour + ":" + minutes + ":" + seconds);
     }
 
     setInterval(setDate, 1000);
-</script>
-
+  </script>
 </html>
