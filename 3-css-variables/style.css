@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --base: #ffc600;
+  --spacing: 50px;
+  --blur: 10px;
+}
+
+img {
+  width: 90%;
+  height: 30%;
+
+  padding: var(--spacing);
+  margin: 10px;
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+.h1 {
+  color: var(--base);
+}
+
+/* normal CSS with no variables */
+
+h2 {
+  margin-bottom: 50px;
+}
+
+.controls {
+  margin-bottom: 50px;
+}
+
+body {
+  background: #193549;
+  color: white;
+  font-family: "helvetica neue", sans-serif;
+  font-weight: 100;
+  font-size: 50px;
+  text-align: center;
+}
+
+.controls {
+  margin-bottom: 50px;
+}
